@@ -58,40 +58,37 @@ inquirer
     .then((answers) =>{     
         const filename = 'NewREADME.md'
         
-        const readMe = `# ${answers.title}
-        
-        ## Description
-    
-        ${answers.description}
-        
-        ## Install
-        
-        * ${answers.install}-
-        
-        ## Usage
-        
-        * ${answers.usage}
-        
-        ## Contribute
-        
-        * ${answers.contribute}
+        const readMe = 
+`# ${answers.title}
 
-        ## Test
-        
-        * ${answers.test}
+## Description
+The following section describes what this project does:
+${answers.description}
 
-        ## License
-        
-        * ${answers.license}
+## Install
+The following section describes how to install this project:
+    .${answers.install}
 
-        ## Github
-        
-        * ${answers.github}
+## Usage
+The following section describes how to use this project:
+    ${answers.usage}
 
-        ## Email
-        
-        * ${answers.email}
-        ` ;
+## Contribute
+The following section describes how to contribute to this project:
+    ${answers.contribute}
+
+## Test
+The following section describes how to test this project:
+    ${answers.test}
+
+## License
+The selected license for this project is:
+    ${answers.license}
+
+## Contact
+The Github profile of the person who created this project is : https://github.com/${answers.github}
+Any other questions or information can be sent to ${answers.email}
+` ;
 
         fs.writeFile(filename, readMe, (err) =>
         err ? console.error(err) : console.log('Success!')
