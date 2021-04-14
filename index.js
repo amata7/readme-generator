@@ -62,30 +62,39 @@ inquirer
 `# ${answers.title}
 
 ## Description
-The following section describes what this project does:
-${answers.description}
+Every good README has a descritpion of what goal the project accomplishes. The following section describes what this project does:
+> ${answers.description}
+
+## Table of Contents 
+[Description](#description)\n
+[Installation](#install)\n
+[Usage](#usage)\n
+[Contribute](#contribute)\n
+[Test](#test)\n
+[License](#license)\n
 
 ## Install
-The following section describes how to install this project:
-    .${answers.install}
+Sometimes the steps to get a project working can be confusing so it is important to give instructions on how to install your project. The following section describes this process:
+
+> ${answers.install}
 
 ## Usage
-The following section describes how to use this project:
-    ${answers.usage}
+Since there could be several ways to input information into a project, it is important to state how it should be used. The following section describes how to use this project:
+> ${answers.usage}
 
 ## Contribute
-The following section describes how to contribute to this project:
-    ${answers.contribute}
+Code is never really finished being added to, and this addition could come from developers other than the original creator. The following section describes how to contribute to this project:
+> ${answers.contribute}
 
 ## Test
-The following section describes how to test this project:
-    ${answers.test}
+A person using this project might want to know what the tests are and how they are used to better understand it's functionality.The following section describes how to test this project:
+> ${answers.test}
 
 ## License
-The selected license for this project is:
-    ${answers.license}
+Every project needs a license to state how the code inside can be used and modified. The selected license for this project is:
+> ${answers.license}
 
-## Contact
+## Other Information
 The Github profile of the person who created this project is : https://github.com/${answers.github}
 Any other questions or information can be sent to ${answers.email}
 ` ;
