@@ -27,6 +27,7 @@ Sometimes the steps to get a project working can be confusing so it is important
 
 > After this, run 'node index.js' to start using the project.
 
+> You can also go here to watch a video of the above instructions as well as a demo on the functionality of the project by [clicking here](https://drive.google.com/file/d/1lMDYiioR_7RbpdKU8arbqaTzL-9rxBId/view?usp=sharing)
 ## Usage
 Since there could be several ways to input information into a project, it is important to state how it should be used. The following section describes how to use this project:
 > Fill out each prompt with a few sentences to give detailed information about the ins and outs of your project
