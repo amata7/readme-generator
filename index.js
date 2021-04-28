@@ -3,7 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [];
 
 inquirer
     .prompt ([
@@ -48,15 +47,10 @@ inquirer
             message: 'What is your GitHub username?',
             name: 'github',
         },
-        {
-            type: 'input',
-            message: 'What is your email address?',
-            name: 'email',
-        },
         
     ])
     .then((answers) =>{     
-        const filename = 'NewREADME.md'
+        const filename = 'newREADME.md'
         
         const readMe = 
 `# ${answers.title}
@@ -66,12 +60,10 @@ Every good README has a descritpion of what goal the project accomplishes. The f
 > ${answers.description}
 
 ## Table of Contents 
-[Description](#description)\n
-[Installation](#install)\n
-[Usage](#usage)\n
-[Contribute](#contribute)\n
-[Test](#test)\n
-[License](#license)\n
+
+[Installation](#install) | [Usage](#usage)\n
+
+[Contribute](#contribute) | [Test](#test) | [License](#license)\n
 
 ## Install
 Sometimes the steps to get a project working can be confusing so it is important to give instructions on how to install your project. The following section describes this process:
@@ -96,7 +88,6 @@ Every project needs a license to state how the code inside can be used and modif
 
 ## Other Information
 The Github profile of the person who created this project is : https://github.com/${answers.github}
-Any other questions or information can be sent to ${answers.email}
 ` ;
 
         fs.writeFile(filename, readMe, (err) =>
