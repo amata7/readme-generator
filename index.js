@@ -57,7 +57,8 @@ inquirer
 
 ## Description
 Every good README has a descritpion of what goal the project accomplishes. The following section describes what this project does:
-> ${answers.description}
+
+    ${answers.description}
 
 ## Table of Contents 
 
@@ -68,23 +69,28 @@ Every good README has a descritpion of what goal the project accomplishes. The f
 ## Install
 Sometimes the steps to get a project working can be confusing so it is important to give instructions on how to install your project. The following section describes this process:
 
-> ${answers.install}
+
+    ${answers.install}
 
 ## Usage
 Since there could be several ways to input information into a project, it is important to state how it should be used. The following section describes how to use this project:
-> ${answers.usage}
+
+    ${answers.usage}
 
 ## Contribute
 Code is never really finished being added to, and this addition could come from developers other than the original creator. The following section describes how to contribute to this project:
-> ${answers.contribute}
+
+    ${answers.contribute}
 
 ## Test
 A person using this project might want to know what the tests are and how they are used to better understand it's functionality.The following section describes how to test this project:
-> ${answers.test}
+
+    ${answers.test}
 
 ## License
 Every project needs a license to state how the code inside can be used and modified. The selected license for this project is:
-> ${answers.license}
+
+    ${answers.license}
 
 ## Other Information
 The Github profile of the person who created this project is : https://github.com/${answers.github}
