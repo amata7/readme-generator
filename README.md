@@ -54,9 +54,7 @@ A person using this project might want to know what the tests are and how they a
 
 ## License
 
-Every project needs a license to state how the code inside can be used and modified. The selected license for this project is:
-
-    Public Domain
+Licensed under the [MIT License](LICENSE)
 
 ## Other Information
 
