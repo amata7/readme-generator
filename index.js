@@ -1,59 +1,62 @@
-// TODO: Include packages needed for this application
-const inquirer = require('inquirer');
-const fs = require('fs');
-
-// TODO: Create an array of questions for user input
+const inquirer = require("inquirer");
+const fs = require("fs");
 
 inquirer
-    .prompt ([
-        {
-            type: 'input',
-            message: 'What is the title of your project?',
-            name: 'title',
-        },
-        {
-            type: 'input',
-            message: 'How would you describe what your project is?',
-            name: 'description',
-        },
-        {
-            type: 'input',
-            message: 'How should someone install your project?',
-            name: 'install',
-        },
-        {
-            type: 'input',
-            message: 'How should someone use your project?',
-            name: 'usage',
-        },
-        {
-            type: 'input',
-            message: 'How should someone contribute to this project?',
-            name: 'contribute',
-        },
-        {
-            type: 'input',
-            message: 'How does someone test this project?',
-            name: 'test',
-        },
-        {
-            type: 'list',
-            message: 'What type of license does your project have?',
-            name: 'license',
-            choices: ['MIT' , 'Apache' , 'Artistic License 2.0' , 'Affero GPL' , 'LGPL v3' , 'Mozilla Public License' , 'Public Domain']
-        },
-        {
-            type: 'input',
-            message: 'What is your GitHub username?',
-            name: 'github',
-        },
-        
-    ])
-    .then((answers) =>{     
-        const filename = 'newREADME.md'
-        
-        const readMe = 
-`# ${answers.title}
+  .prompt([
+    {
+      type: "input",
+      message: "What is the title of your project?",
+      name: "title",
+    },
+    {
+      type: "input",
+      message: "How would you describe what your project is?",
+      name: "description",
+    },
+    {
+      type: "input",
+      message: "How should someone install your project?",
+      name: "install",
+    },
+    {
+      type: "input",
+      message: "How should someone use your project?",
+      name: "usage",
+    },
+    {
+      type: "input",
+      message: "How should someone contribute to this project?",
+      name: "contribute",
+    },
+    {
+      type: "input",
+      message: "How does someone test this project?",
+      name: "test",
+    },
+    {
+      type: "list",
+      message: "What type of license does your project have?",
+      name: "license",
+      choices: [
+        "MIT",
+        "Apache",
+        "Artistic License 2.0",
+        "Affero GPL",
+        "LGPL v3",
+        "Mozilla Public License",
+        "Public Domain",
+      ],
+    },
+    {
+      type: "input",
+      message: "What is your GitHub username?",
+      name: "github",
+    },
+  ])
+  .then((answers) => {
+    const filename = "newREADME.md";
+
+    const readMe = `# ${answers.title}
 
 ## Description
 Every good README has a descritpion of what goal the project accomplishes. The following section describes what this project does:
@@ -94,15 +97,9 @@ Every project needs a license to state how the code inside can be used and modif
 
 ## Other Information
 The Github profile of the person who created this project is : https://github.com/${answers.github}
-` ;
+`;
 
-        fs.writeFile(filename, readMe, (err) =>
-        err ? console.error(err) : console.log('Success!')
-        );
-    })
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+    fs.writeFile(filename, readMe, (err) =>
+      err ? console.error(err) : console.log("Success!")
+    );
+  });
