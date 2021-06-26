@@ -54,7 +54,7 @@ A person using this project might want to know what the tests are and how they a
 
 ## License
 
-Licensed under the
+Licensed under the MIT License
 
 ![GitHub](https://img.shields.io/github/license/amata7/readme-generator?logo=GitHub)
 
