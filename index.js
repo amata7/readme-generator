@@ -37,7 +37,7 @@ inquirer
       type: "list",
       message: "What type of license does your project have?",
       name: "license",
-      choices: ["MIT", "Apache", "Mozilla Public License"],
+      choices: ["MIT License", "Apache License", "Mozilla Public License"],
     },
     {
       type: "input",
@@ -52,11 +52,19 @@ inquirer
   ])
   .then((answers) => {
     if (answers.license === "Mozilla Public License") {
-      answers.license = "Mozilla%20Public%20License";
+      answers.badge = "Mozilla%20Public%20License";
+    }
+    if (answers.license === "Apache License") {
+      answers.badge = "Apache%20License";
+    }
+    if (answers.license === "MIT License") {
+      answers.badge = "MIT%20License";
     }
     const filename = "newREADME.md";
 
     const readMe = `# ${answers.title}
+
+![GitHub](https://img.shields.io/static/v1?label=license&message=${answers.badge}&color=blue&logo=github)
 
 ## Description
 
@@ -89,7 +97,7 @@ ${answers.test}
 
 ## License
 
-![GitHub](https://img.shields.io/static/v1?label=license&message=${answers.license}&color=blue&logo=github)
+This project is licensed with the ${answers.license}
 
 ## Other Information
 
