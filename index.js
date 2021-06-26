@@ -37,66 +37,65 @@ inquirer
       type: "list",
       message: "What type of license does your project have?",
       name: "license",
-      choices: [
-        "MIT",
-        "Apache",
-        "Artistic License 2.0",
-        "Affero GPL",
-        "LGPL v3",
-        "Mozilla Public License",
-        "Public Domain",
-      ],
+      choices: ["MIT", "Apache", "Mozilla Public License"],
     },
     {
       type: "input",
       message: "What is your GitHub username?",
       name: "github",
     },
+    {
+      type: "input",
+      message: "What is your email address?",
+      name: "email",
+    },
   ])
   .then((answers) => {
+    if (answers.license === "Mozilla Public License") {
+      answers.license = "Mozilla%20Public%20License";
+    }
     const filename = "newREADME.md";
 
     const readMe = `# ${answers.title}
 
 ## Description
-Every good README has a descritpion of what goal the project accomplishes. The following section describes what this project does:
 
-    ${answers.description}
+
+${answers.description}
 
 ## Table of Contents 
 
 [Installation](#install) | [Usage](#usage)\n
 
 [Contribute](#contribute) | [Test](#test) | [License](#license)\n
+\n
+\n
 
-## Install
-Sometimes the steps to get a project working can be confusing so it is important to give instructions on how to install your project. The following section describes this process:
+## Installation Instructions
 
+${answers.install}
 
-    ${answers.install}
+## How to Use This Project
 
-## Usage
-Since there could be several ways to input information into a project, it is important to state how it should be used. The following section describes how to use this project:
+${answers.usage}
 
-    ${answers.usage}
+## Contribute to Future Development
 
-## Contribute
-Code is never really finished being added to, and this addition could come from developers other than the original creator. The following section describes how to contribute to this project:
+${answers.contribute}
 
-    ${answers.contribute}
+## Testing Instructions
 
-## Test
-A person using this project might want to know what the tests are and how they are used to better understand it's functionality.The following section describes how to test this project:
-
-    ${answers.test}
+${answers.test}
 
 ## License
-Every project needs a license to state how the code inside can be used and modified. The selected license for this project is:
 
-    ${answers.license}
+![GitHub](https://img.shields.io/static/v1?label=license&message=${answers.license}&color=blue&logo=github)
 
 ## Other Information
-The Github profile of the person who created this project is : https://github.com/${answers.github}
+
+Github: https://github.com/${answers.github}
+
+Email: ${answers.email}
 `;
 
     fs.writeFile(filename, readMe, (err) =>
